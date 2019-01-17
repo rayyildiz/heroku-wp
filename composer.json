@@ -1,7 +1,7 @@
 {
     "name": "xyu/heroku-wp",
     "description": "A template for installing and running WordPress on Heroku",
-    "homepage": "https://github.com/xyu/heroku-wp",
+    "homepage": "https://github.com/rayyildiz/heroku-wp",
     "license": "MIT",
     "authors": [
         {
@@ -37,10 +37,10 @@
             "type": "package",
             "package": {
                 "name": "WordPress/WordPress",
-                "version": "4.9.7",
+                "version": "5.0.2",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/WordPress/WordPress/archive/4.9.7.zip"
+                    "url": "https://github.com/WordPress/WordPress/archive/5.0.2.zip"
                 }
             }
         },

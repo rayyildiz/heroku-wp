@@ -18,12 +18,21 @@
 require '/app/vendor/autoload.php';
 
 // Disable filesystem level changes from WP
-define( 'DISALLOW_FILE_EDIT', true );
-define( 'DISALLOW_FILE_MODS', true );
+define( 'DISALLOW_FILE_EDIT', false );
+define( 'DISALLOW_FILE_MODS', false );
 
 // Make sure we admin over SSL
-define( 'FORCE_SSL_LOGIN', true );
-define( 'FORCE_SSL_ADMIN', true );
+if ( isset( $_ENV['WP_FORCE_SSL_LOGIN'] ) && 'FALSE' == $_ENV['WP_FORCE_SSL_LOGIN'] ) {
+	define( 'FORCE_SSL_LOGIN', false );
+} else {
+	define( 'FORCE_SSL_LOGIN', true );
+}
+
+if ( isset( $_ENV['WP_FORCE_SSL_ADMIN'] ) && 'FALSE' == $_ENV['WP_FORCE_SSL_ADMIN'] ) {
+	define( 'FORCE_SSL_ADMIN', false );
+} else {
+	define( 'FORCE_SSL_ADMIN', true );
+}
 
 // HTTPS port is always 80 because SSL is terminated at Heroku router / CloudFlare
 define( 'JETPACK_SIGNATURE__HTTPS_PORT', 80 );
